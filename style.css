@@ -1,0 +1,32 @@
+body {
+    text-align: center;
+}
+.box {
+    height: 150px;
+    width: 150px;
+    border-radius: 20%;
+    border: 10px solid black;
+    margin: 1.5rem;
+}
+.container {
+    justify-self: center;
+    display: flex;
+    width: 500px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.yellow {
+    background-color: yellow;
+}
+.green {
+    background-color: green;
+}
+.red {
+    background-color: red;
+}
+.purple {
+    background-color: purple;
+}
+.flash {
+    background-color: white;
+}
