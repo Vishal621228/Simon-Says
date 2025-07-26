@@ -33,7 +33,7 @@ function levelUp() {
     for(let i=0; i<gameSeq.length; i++) {
         setTimeout(function() {
             btnFlash(document.querySelector(`.${gameSeq[i]}`));
-        }, 300*(i+1))
+        }, 500*(i+1))
     }
     userSeq = [];
 }
