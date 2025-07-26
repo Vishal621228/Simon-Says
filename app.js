@@ -84,3 +84,16 @@ for(let btn of btns) {
         }
     });
 }
+
+//prevent double taps
+let lastTap = 0;
+
+for (let btn of btns) {
+    btn.addEventListener('touchend', function(e) {
+        const now = Date.now();
+        if (now - lastTap < 350) {
+            e.preventDefault(); // Prevent double-tap zoom
+        }
+        lastTap = now;
+    });
+}
