@@ -70,13 +70,13 @@ for(let btn of btns) {
             if(userSeq[idx] != gameSeq[idx]) {
                 h2.innerHTML = `Game Over! You reached Level ${level}! <br> Press any key to start again`;
                 started = false;
-                level = 0;
                 gameSeq = [];
                 userSeq = [];
                 if(isMobile) {
                     startBtn.style.removeProperty("display");
                     h2.innerHTML = `Game Over! You reached Level ${level}! <br> Press start to play again`;
                 }
+                level = 0;
                 return;
             }
             if(userSeq.length === gameSeq.length) {
