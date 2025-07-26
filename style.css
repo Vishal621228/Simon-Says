@@ -16,6 +16,7 @@ body {
     border-radius: 20%;
     border: 5px solid black;
     margin: 4vw;
+    touch-action: manipulation;
 }
 
 .yellow {
@@ -36,11 +37,12 @@ body {
 
 .startBtn {
     background-color: deepskyblue;
-    border-radius: 5px;
+    border-radius: 10px;
     font-weight: 700;
-    font-size: medium;
+    font-size: 1.8em;
     border: 2px solid black;
     margin-top: 20px;
+
 }
 
 @media (min-width: 750px) {
