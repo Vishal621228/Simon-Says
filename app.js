@@ -15,15 +15,16 @@ if(isMobile) {
     startBtn.classList.add("startBtn");
     let container  = document.querySelector(".container");
     startBtn.appendChild(container);
-    document.addEventListener(resp, function() {
+    startBtn.addEventListener(resp, function() {
         if(started == false) {
             started = true;
             levelUp();
+            startBtn.remove();
         }
     });
 } else {
-    resp = "keypress";
-    document.addEventListener(resp, function() {
+    resp = "click";
+    document.addEventListener("keypress", function() {
         if(started == false) {
             started = true;
             levelUp();
