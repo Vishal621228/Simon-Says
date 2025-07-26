@@ -7,12 +7,30 @@ let level = 0;
 let h2 = document.querySelector("h2");
 let btns = document.querySelectorAll(".box");
 
-document.addEventListener("keypress", function() {
-    if(started == false) {
-        started = true;
-        levelUp();
-    }
-});
+const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+let resp;
+if(isMobile) {
+    resp = "touchstart";
+    let startBtn = document.createElement("button");
+    startBtn.classList.add("startBtn");
+    let container  = document.querySelector(".container");
+    startBtn.appendChild(container);
+    document.addEventListener(resp, function() {
+        if(started == false) {
+            started = true;
+            levelUp();
+        }
+    });
+} else {
+    resp = "keypress";
+    document.addEventListener(resp, function() {
+        if(started == false) {
+            started = true;
+            levelUp();
+        }
+    });
+}
+
 
 function btnFlash(btn) {
     btn.classList.add("flash");
@@ -39,7 +57,7 @@ function levelUp() {
 }
 
 for(let btn of btns) {
-    btn.addEventListener("click", function() {
+    btn.addEventListener(resp, function() {
         btnFlash(btn);
         
         if(started == true) {
