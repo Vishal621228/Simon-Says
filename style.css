@@ -1,20 +1,23 @@
 body {
     text-align: center;
-}
-.box {
-    height: 150px;
-    width: 150px;
-    border-radius: 20%;
-    border: 10px solid black;
-    margin: 1.5rem;
+    background-color: rgb(223, 158, 199);
 }
 .container {
     justify-self: center;
     display: flex;
-    width: 500px;
+    /* width: 70vw;
+    height: 70vw; */
     flex-wrap: wrap;
     justify-content: center;
 }
+.box {
+    height: 22vw;
+    width: 22vw;
+    border-radius: 20%;
+    border: 5px solid black;
+    margin: 4vw;
+}
+
 .yellow {
     background-color: yellow;
 }
@@ -29,4 +32,11 @@ body {
 }
 .flash {
     background-color: white;
+}
+
+@media (min-width: 750px) {
+    .box {
+        width: 150px;
+        height: 150px;
+    }
 }

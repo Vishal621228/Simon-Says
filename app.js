@@ -27,9 +27,14 @@ function randomBtn(btns) {
 function levelUp() {
     level++;
     h2.innerText = `Level ${level}`;
-    let btn = randomBtn(btns);
-    btnFlash(btn);
-    gameSeq.push(btn.classList[1]);
+    let randBtn = randomBtn(btns);
+    gameSeq.push(randBtn.classList[1]);
+    
+    for(let i=0; i<gameSeq.length; i++) {
+        setTimeout(function() {
+            btnFlash(document.querySelector(`.${gameSeq[i]}`));
+        }, 300*(i+1))
+    }
     userSeq = [];
 }
 
