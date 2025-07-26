@@ -1,7 +1,7 @@
 # About
-I built this Project from scratch **wrote complete logic myself** took help in the start, then understood the skeleton of the project and then completed it myself
-<br>
-It took almost 9+ hours to complete <br>
+I built this Project from scratch **wrote complete logic myself** took help in the start, then understood the skeleton of the project and then completed it myself <br>
+Made it Mobile friendly on my own <br>
+Learned more about DOM Events for mobile <br>
 
 ## Unique Features
 -> **Mobile friendly** <br>

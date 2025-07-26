@@ -68,13 +68,14 @@ for(let btn of btns) {
             userSeq.push(btn.classList[1]);
             let idx = userSeq.length - 1;
             if(userSeq[idx] != gameSeq[idx]) {
-                h2.innerText = `Game Over! You reached Level ${level}! Press any key to start again`;
+                h2.innerHTML = `Game Over! You reached Level ${level}! <br> Press any key to start again`;
                 started = false;
                 level = 0;
                 gameSeq = [];
                 userSeq = [];
                 if(isMobile) {
                     startBtn.style.removeProperty("display");
+                    h2.innerHTML = `Game Over! You reached Level ${level}! <br> Press start to play again`;
                 }
                 return;
             }
