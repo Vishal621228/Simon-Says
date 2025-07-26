@@ -10,16 +10,18 @@ let btns = document.querySelectorAll(".box");
 const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 let resp;
 if(isMobile) {
+    h2.innerText = "Touch anywhere to start";
     resp = "touchstart";
     let startBtn = document.createElement("button");
+    startBtn.innerText = "Start";
     startBtn.classList.add("startBtn");
     let container  = document.querySelector(".container");
-    startBtn.appendChild(container);
+    container.insertAdjacentElement("afterend", startBtn);
     startBtn.addEventListener(resp, function() {
         if(started == false) {
             started = true;
             levelUp();
-            startBtn.remove();
+            startBtn.style.display = "none";
         }
     });
 } else {
@@ -58,18 +60,21 @@ function levelUp() {
 }
 
 for(let btn of btns) {
-    btn.addEventListener(resp, function() {
+    btn.addEventListener(resp, function(event) {
         btnFlash(btn);
-        
+        event.stopPropagation();
         if(started == true) {
             userSeq.push(btn.classList[1]);
             let idx = userSeq.length - 1;
             if(userSeq[idx] != gameSeq[idx]) {
-                h2.innerText = `Game Over! You reached ${level} levels Press any key to start again`;
+                h2.innerText = `Game Over! You reached Level ${level}! Press any key to start again`;
                 started = false;
                 level = 0;
                 gameSeq = [];
                 userSeq = [];
+                if(isMobile) {
+                    startBtn.style.removeProperty("display");
+                }
                 return;
             }
             if(userSeq.length === gameSeq.length) {
