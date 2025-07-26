@@ -9,8 +9,8 @@ let btns = document.querySelectorAll(".box");
 
 const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 let resp;
-if(isMobile) {
-    h2.innerText = "Touch anywhere to start";
+if(true) {
+    h2.innerText = "Click start button to start the game!";
     resp = "touchstart";
     let startBtn = document.createElement("button");
     startBtn.innerText = "Start";
