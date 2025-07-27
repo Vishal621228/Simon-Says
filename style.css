@@ -1,6 +1,6 @@
 body {
     text-align: center;
-    background-color: rgb(223, 158, 199);
+    background: linear-gradient(90deg, #5AE2DD, #26D7D1, #90EBE8);
 }
 .container {
     justify-self: center;
@@ -11,11 +11,11 @@ body {
     justify-content: center;
 }
 .box {
-    height: 22vw;
-    width: 22vw;
+    height: 20vw;
+    width: 20vw;
     border-radius: 20%;
     border: 5px solid black;
-    margin: 4vw;
+    margin: 3vw;
     touch-action: manipulation;
 }
 

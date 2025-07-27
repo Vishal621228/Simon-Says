@@ -3,6 +3,7 @@ let userSeq = [];
 
 let started = false;
 let level = 0;
+let highScore = 0;
 
 let h2 = document.querySelector("h2");
 let btns = document.querySelectorAll(".box");
@@ -74,8 +75,18 @@ for(let btn of btns) {
                 userSeq = [];
                 if(isMobile) {
                     startBtn.style.removeProperty("display");
-                    h2.innerHTML = `Game Over! You reached Level ${level}! <br> Press start to play again`;
+                    h2.innerHTML = `Game Over! You reached Level <b>${level}!<b> <br> Press start to play again`;
                 }
+                document.querySelector("body").style.background = "red";
+                setTimeout(function() {
+                    document.querySelector("body").style.background = "linear-gradient(90deg, #5AE2DD, #26D7D1, #90EBE8)";
+                }, 100);
+                if(level > highScore) {
+                    highScore = level;
+                    document.querySelector("p").innerHTML = `<b>HIGH SCORE: ${highScore}<b>`;
+                    alert(`Congratulations! You set a new High score: ${highScore}. Play again to beat it!`);
+                }
+                
                 level = 0;
                 return;
             }
